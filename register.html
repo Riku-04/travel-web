@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- ページの基本設定 -->
+    <meta charset="UTF-8">
+
+    <!-- スマートフォンなどの画面幅に合わせて表示する -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ページタイトル -->
+    <title>Trip Note｜新規会員登録</title>
+
+    <!-- 検索結果などに表示されるページの説明 -->
+    <meta name="description" content="Trip Noteの新規会員登録ページです。">
+
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="./css/registerStyle.css">
+    
+</head>
+
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+
+        <!-- ヘッダー内の要素をまとめる -->
+        <div class="headerInner">
+
+            <!-- サイトロゴ -->
+            <h1>
+                <a class="siteIcon" href="top.html">
+                    Trip Note
+                </a>
+            </h1>
+
+            <!-- 新規登録リンク -->
+            <a class="headerLink" href="register.html">新規登録</a>
+
+            <!-- ログインリンク -->
+            <a class="headerLink" href="login.html">ログイン</a>
+
+            <!-- メニュー -->
+            <details class="menu">
+
+                <!-- メニューを開閉するボタン -->
+                <summary class="menuButton">
+                    <img src="./images/icon/topmenu.png" alt="メニューを開く">
+                </summary>
+
+                <!-- 開閉式メニューの内容 -->
+                <nav class="menuNav">
+
+                    <!-- サービス関連メニュー -->
+                    <ul>
+                        <li>
+                            <a href="function.html">サービス紹介</a>
+                        </li>
+
+                        <li>
+                            <a href="">キーワードで探す</a>
+                        </li>
+
+                        <li>
+                            <a href="tripitinerary.html">旅のしおり</a>
+                        </li>
+                    </ul>
+
+                    <!-- 会員関連メニュー -->
+                    <ul>
+                        <li>
+                            <a href="register.html">新規会員登録</a>
+                        </li>
+
+                        <li>
+                            <a href="login.html">ログイン</a>
+                        </li>
+                    </ul>
+
+                    <!-- サポート関連メニュー -->
+                    <ul>
+                        <li>
+                            <a href="">よくある質問</a>
+                        </li>
+
+                        <li>
+                            <a href="">お問い合わせ</a>
+                        </li>
+                    </ul>
+
+                    <!-- SNSリンク -->
+                    <ul class="snsList">
+
+                        <!-- SNS -->
+                        <li>
+                            <a class="snsLog" href="">
+                                <img src="./images/icon/snsIcon02.png" alt="Trip NoteのSNSへのリンク">
+                            </a>
+                        </li>
+
+                        <!-- chat -->
+                        <li>
+                            <a class="snsLog" href="">
+                                <img src="./images/icon/Chat02.png" alt="Trip Noteお問い合わせチャットへのリンク">
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </details>
+
+        </div>
+
+    </header>
+
+
+    <!-- メインコンテンツ -->
+    <main>
+
+        <!-- 新規登録エリア -->
+        <section class="register">
+
+            <!-- 新規登録タイトル -->
+            <h1>アカウントを登録</h1>
+
+            <!-- 外部サービス登録 -->
+            <div class="socialRegister">
+
+                <!-- SNSアカウントで登録 -->
+                <a class="socialButton" href="">
+
+                    <!-- SNSアイコン -->
+                    <span class="socialIcon">S</span>
+
+                    <!-- SNS登録文字 -->
+                    <span class="socialText">SNSアカウントで登録</span>
+
+                </a>
+                
+            </div>
+
+            <!-- 区切り -->
+            <div class="registerDivider">
+
+                <!-- 区切り線左側 -->
+                <span></span>
+
+                <!-- 区切り文字 -->
+                <p>または</p>
+
+                <!-- 区切り線右側 -->
+                <span></span>
+
+            </div>
+
+            <!-- 新規登録フォーム -->
+            <form class="registerForm" action="" method="post">
+
+                <!-- メールアドレス -->
+                <div class="formItem">
+
+                    <label for="email">メールアドレス</label>
+                    <input id="email" type="email" name="email" placeholder="tripbook@XXXX.co.jp">
+
+                </div>
+
+                <!-- パスワード -->
+                <div class="formItem">
+
+                    <label for="password">パスワード</label>
+                    <input id="password" type="password" name="password" placeholder="半角英字(大文字小文字)、数字、記号">
+
+                </div>
+
+                <!-- パスワード確認 -->
+                <div class="formItem">
+
+                    <label for="passwordConfirm">パスワード確認</label>
+                    <input id="passwordConfirm" type="password" name="passwordConfirm" placeholder="XXXXX">
+
+                </div>
+
+                <!-- 新規会員登録ボタン -->
+                <button class="registerButton" type="submit">新規会員登録</button>
+
+            </form>
+
+            <!-- ログイン案内 -->
+            <p class="registerHelp">
+                
+                ログインは
+                <a href="login.html">コチラ</a>
+
+            </p>
+
+        </section>
+        
+    </main>
+
+    <!-- フッター -->
+    <footer>
+
+        <!-- フッターロゴ -->
+        <a class="footerLogo" href="top.html">
+
+            <p>Trip Note</p>
+
+        </a>
+        
+        <!-- フッターナビゲーション -->
+        <div class="footerNav">
+            
+            <!-- サービス関連リンク -->
+            <ul>
+                <li>
+                    <a href="function.html">サービス紹介</a>
+                </li>
+                <li>
+                    <a href="">キーワードで探す</a>
+                </li>
+                <li>
+                    <a href="tripitinerary.html">旅のしおり</a>
+                </li>
+            </ul>
+            <!-- 会員関連リンク -->
+            <ul>
+                <li>
+                    <a href="register.html">新規会員登録</a>
+                </li>
+                <li>
+                    <a href="login.html">ログイン</a>
+                </li>
+            </ul>
+            <!-- サポート関連リンク -->
+            <ul>
+                <li>
+                    <a href="">よくある質問</a>
+                </li>
+                <li>
+                    <a href="">お問い合わせ</a>
+                </li>
+            </ul>
+        </div>
+        <!-- フッターSNSリンク -->
+        <ul class="footerSns">
+
+            <!-- SNS -->
+                <li>
+                    <a class="snsLog" href="">
+                        <img src="./images/icon/snsIcon.png" alt="Trip NoteのSNSへのリンク">
+                    </a>
+                </li>
+
+                <!-- chat -->
+                <li>
+                    <a class="snsLog" href="">
+                        <img src="./images/icon/Chat.png" alt="Trip Noteお問い合わせチャットへのリンク">
+                    </a>
+                </li>
+
+        </ul>
+
+        <!-- コピーライト -->
+        <small>
+            &copy; 2030 TravelBook Co.,Ltd.
+        </small>
+        
+    </footer>
+    <!-- ページ上部へ戻るボタン -->
+    <a class="btn_top" href="#">▲</a>
+</body>
+
+</html>

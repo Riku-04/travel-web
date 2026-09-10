@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <!-- ページの基本設定 -->
+    <meta charset="UTF-8">
+
+    <!-- スマートフォンなどの画面幅に合わせて表示する -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ページタイトル -->
+    <title>Trip Note｜旅のしおり</title>
+
+    <!-- 検索結果などに表示されるページの説明 -->
+    <meta name="description" content="Trip Noteで旅のしおりを作成">
+
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="./css/tripitineraryStyle.css">
+
+</head>
+
+
+
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+
+        <!-- ヘッダー内の要素をまとめる -->
+        <div class="headerInner">
+
+            <!-- サイトロゴ -->
+            <h1>
+                <a class="siteIcon" href="top.html">
+                    Trip Note
+                </a>
+            </h1>
+
+            <!-- 新規登録リンク -->
+            <a class="headerLink" href="register.html">新規登録</a>
+
+            <!-- ログインリンク -->
+            <a class="headerLink" href="login.html">ログイン</a>
+
+            <!-- メニュー -->
+            <details class="menu">
+
+                <!-- メニューを開閉するボタン -->
+                <summary class="menuButton">
+                    <img src="./images/icon/topmenu.png" alt="メニューを開く">
+                </summary>
+
+                <!-- 開閉式メニューの内容 -->
+                <nav class="menuNav">
+
+                    <!-- サービス関連メニュー -->
+                    <ul>
+                        <li>
+                            <a href="function.html">サービス紹介</a>
+                        </li>
+
+                        <li>
+                            <a href="">キーワードで探す</a>
+                        </li>
+
+                        <li>
+                            <a href="tripitinerary.html">旅のしおり</a>
+                        </li>
+                    </ul>
+
+                    <!-- 会員関連メニュー -->
+                    <ul>
+                        <li>
+                            <a href="register.html">新規会員登録</a>
+                        </li>
+
+                        <li>
+                            <a href="login.html">ログイン</a>
+                        </li>
+                    </ul>
+
+                    <!-- サポート関連メニュー -->
+                    <ul>
+                        <li>
+                            <a href="">よくある質問</a>
+                        </li>
+
+                        <li>
+                            <a href="">お問い合わせ</a>
+                        </li>
+                    </ul>
+
+                    <!-- SNSリンク -->
+                    <ul class="snsList">
+
+                        <!-- SNS -->
+                        <li>
+                            <a class="snsLog" href="">
+                                <img src="./images/icon/snsIcon02.png" alt="Trip NoteのSNSへのリンク">
+                            </a>
+                        </li>
+
+                        <!-- chat -->
+                        <li>
+                            <a class="snsLog" href="">
+                                <img src="./images/icon/Chat02.png" alt="Trip Noteお問い合わせチャットへのリンク">
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </details>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- メインコンテンツ -->
+    <main>
+
+        <!-- 旅のしおり作成 -->
+        <section class="itinerary">
+
+            <!-- ページタイトル -->
+            <h1>旅のしおりを作成しよう！</h1>
+
+            <!-- しおりタイトル入力欄 -->
+            <div class="titleForm">
+                <input type="text" name="title" placeholder="しおりのタイトル">
+            </div>
+
+            <!-- 旅行期間 -->
+            <div class="dateGroup">
+
+                <!-- 出発日 -->
+                <input type="date" name="startDate" aria-label="出発日">
+
+                <span class="dateArrow">〜</span>
+
+                <!-- 帰宅日 -->
+                <input type="date" name="endDate" aria-label="帰宅日">
+
+            </div>
+
+
+
+            <!-- 工程一覧 -->
+            <div class="processList">
+
+                <!-- 工程① -->
+                <article class="process">
+
+                    <!-- 工程タイトル -->
+                    <div class="processTitle">
+                        <h2>工程①</h2>
+                    </div>
+
+                    <!-- 工程内容 -->
+                    <div class="processContent">
+
+                        <!-- 時間と目的地 -->
+                        <div class="processTop">
+
+                            <!-- 時間選択 -->
+                            <div class="timeSelect">
+
+                                <select name="hour1" aria-label="工程①の時">
+                                    <option value="">--</option>
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                </select>
+
+                                <span>:</span>
+
+                                <select name="minute1" aria-label="工程①の分">
+                                    <option value="">--</option>
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                </select>
+
+                            </div>
+
+                            <!-- 目的地入力 -->
+                            <input class="destination" type="text" name="destination1" placeholder="目的地を入力">
+
+                        </div>
+
+                        <!-- カテゴリ選択 -->
+                        <div class="categorySelect">
+                            <select name="category1" aria-label="工程①のカテゴリ">
+                                <option value="">カテゴリ</option>
+                                <option value="観光">観光</option>
+                                <option value="食事">食事</option>
+                                <option value="宿泊">宿泊</option>
+                                <option value="買い物">買い物</option>
+                                <option value="移動">移動</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 工程①と②の間 -->
+                <div class="processBetween">
+
+                    <!-- 工程の順番を入れ替えるボタン -->
+                    <button class="sortButton" type="button">
+                        ↕ 工程の入れ替え
+                    </button>
+
+                    <!-- 移動方法 -->
+                    <div class="moveButtons">
+
+                        <!-- 旅行を味わう -->
+                        <label class="moveButton">
+
+                            <input type="radio" name="move1" value="bus" checked>
+
+                            <span>旅行を味わう ▶ 高速バス</span>
+
+                        </label>
+
+                        <!-- 時間を節約 -->
+                        <label class="moveButton">
+
+                            <input type="radio" name="move1" value="train">
+
+                            <span>時間を節約 ▶ 新幹線</span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- 工程② -->
+                <article class="process">
+
+                    <!-- 工程タイトル -->
+                    <div class="processTitle">
+                        <h2>工程②</h2>
+                    </div>
+
+                    <!-- 工程内容 -->
+                    <div class="processContent">
+
+                        <!-- 時間と目的地 -->
+                        <div class="processTop">
+
+                            <!-- 時間選択 -->
+                            <div class="timeSelect">
+
+                                <select name="hour2" aria-label="工程②の時">
+                                    <option value="">--</option>
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                </select>
+
+                                <span>:</span>
+
+                                <select name="minute2" aria-label="工程②の分">
+                                    <option value="">--</option>
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                </select>
+
+                            </div>
+
+                            <!-- 目的地入力 -->
+                            <input class="destination" type="text" name="destination2" placeholder="目的地を入力">
+
+                        </div>
+
+                        <!-- カテゴリ選択 -->
+                        <div class="categorySelect">
+                            <select name="category2" aria-label="工程②のカテゴリ">
+                                <option value="">カテゴリ</option>
+                                <option value="観光">観光</option>
+                                <option value="食事">食事</option>
+                                <option value="宿泊">宿泊</option>
+                                <option value="買い物">買い物</option>
+                                <option value="移動">移動</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 工程②と③の間 -->
+                <div class="processBetween">
+
+                    <!-- 工程の順番を入れ替えるボタン -->
+                    <button class="sortButton" type="button">
+                        ↕ 工程の入れ替え
+                    </button>
+
+                    <!-- 移動方法 -->
+                    <div class="moveButtons">
+
+                        <!-- 旅行を味わう -->
+                        <label class="moveButton">
+
+                            <input type="radio" name="move2" value="bus" checked>
+
+                            <span>旅行を味わう ▶ バス</span>
+
+                        </label>
+
+                        <!-- 時間を節約 -->
+                        <label class="moveButton">
+
+                            <input type="radio" name="move2" value="bike">
+
+                            <span>時間を節約 ▶ 自転車</span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 工程③ -->
+                <article class="process">
+
+                    <!-- 工程タイトル -->
+                    <div class="processTitle">
+                        <h2>工程③</h2>
+                    </div>
+
+                    <!-- 工程内容 -->
+                    <div class="processContent">
+
+                        <!-- 時間と目的地 -->
+                        <div class="processTop">
+
+                            <!-- 時間選択 -->
+                            <div class="timeSelect">
+
+                                <select name="hour3" aria-label="工程③の時">
+                                    <option value="">--</option>
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                </select>
+
+                                <span>:</span>
+
+                                <select name="minute3" aria-label="工程③の分">
+                                    <option value="">--</option>
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                </select>
+
+                            </div>
+
+                            <!-- 目的地入力 -->
+                            <input class="destination" type="text" name="destination3" placeholder="目的地を入力">
+
+                        </div>
+
+                        <!-- カテゴリ選択 -->
+                        <div class="categorySelect">
+                            <select name="category3" aria-label="工程③のカゴリ">
+                                <option value="">カテゴリ</option>
+                                <option value="観光">観光</option>
+                                <option value="食事">食事</option>
+                                <option value="宿泊">宿泊</option>
+                                <option value="買い物">買い物</option>
+                                <option value="移動">移動</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ==================== -->
+                <!-- 工程追加ボタン -->
+                <!-- ==================== -->
+                <button class="addProcessButton" type="button">
+                    <span>＋ 工程を追加</span>
+                </button>
+
+            </div>
+
+
+
+            <!-- しおり作成ボタン -->
+            <div class="submitForm">
+
+                <button type="submit">
+
+                    <span>しおりを作成する</span>
+
+                    <img src="./images/icon/write_black.png" alt="しおり作成">
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- フッター -->
+    <footer>
+
+        <!-- フッターロゴ -->
+        <a class="footerLogo" href="top.html">
+            <p>Trip Note</p>
+        </a>
+
+        <!-- フッターナビゲーション -->
+        <div class="footerNav">
+
+            <!-- サービス関連リンク -->
+            <ul>
+                <li>
+                    <a href="function.html">サービス紹介</a>
+                </li>
+
+                <li>
+                    <a href="">キーワードで探す</a>
+                </li>
+
+                <li>
+                    <a href="tripitinerary.html">旅のしおり</a>
+                </li>
+            </ul>
+
+            <!-- 会員関連リンク -->
+            <ul>
+                <li>
+                    <a href="register.html">新規会員登録</a>
+                </li>
+
+                <li>
+                    <a href="login.html">ログイン</a>
+                </li>
+            </ul>
+
+            <!-- サポート関連リンク -->
+            <ul>
+                <li>
+                    <a href="">よくある質問</a>
+                </li>
+
+                <li>
+                    <a href="">お問い合わせ</a>
+                </li>
+            </ul>
+
+        </div>
+
+
+
+        <!-- フッターSNSリンク -->
+        <ul class="footerSns">
+
+            <!-- SNS -->
+                <li>
+                    <a class="snsLog" href="">
+                        <img src="./images/icon/snsIcon.png" alt="Trip NoteのSNSへのリンク">
+                    </a>
+                </li>
+
+                <!-- chat -->
+                <li>
+                    <a class="snsLog" href="">
+                        <img src="./images/icon/Chat.png" alt="Trip Noteお問い合わせチャットへのリンク">
+                    </a>
+                </li>
+
+        </ul>
+
+
+
+        <!-- コピーライト -->
+        <small>
+            &copy; 2030 TravelBook Co.,Ltd.
+        </small>
+
+    </footer>
+
+
+
+    <!-- ページ上部へ戻るボタン -->
+    <a class="btn_top" href="#">▲</a>
+
+</body>
+
+</html>

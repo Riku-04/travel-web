@@ -1,0 +1,2332 @@
+/* -全体設定- */
+
+/* ページ全体の余白やサイズ計算の基準を設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* paddingとborderをwidth・heightの中に含めて計算する */
+}
+
+
+/* HTML全体の基本設定 */
+html {
+    font-size: 62.5%;
+    /* 1remを約10pxとして扱いやすくするための基準サイズ */
+
+    font-family:
+        "M PLUS 1p",
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+    /* 日本語表示に使用するフォントを指定 */
+
+    font-style: normal;
+    /* 通常の文字スタイルに設定 */
+
+    color: #003376;
+    /* ページ全体の基本文字色を設定 */
+
+    text-align: center;
+    /* ページ内の文字を基本的に中央揃えにする */
+
+    scroll-behavior: smooth;
+    /* ページ内リンクをクリックしたときに滑らかに移動する */
+}
+
+
+/* -ページ全体- */
+/* body全体の基本設定 */
+body {
+    /* margin: 0;
+        /*ブラウザ標準の外側余白をなくす
+        *で設定済みのため不要 */
+
+    padding-top: 55px;
+    /* 固定ヘッダーの高さ分だけ本文を下へずらす */
+
+    font-size: 1.4rem;
+    /* 本文の基本文字サイズ */
+
+    line-height: 1.6;
+    /* 本文の行間を設定 */
+
+    background-color: #D5ECFF;
+    /* ページ全体の背景色を設定 */
+}
+
+
+/* -リンク- */
+/* ページ内のリンクを共通設定 */
+a {
+    color: #003376;
+    /* リンクの文字色 */
+
+    text-decoration: none;
+    /* リンクの下線を消す */
+}
+
+
+/* -画像- */
+/* ページ内の画像を共通設定 */
+img {
+    max-width: 100%;
+    /* 親要素から画像がはみ出さないようにする */
+
+    height: auto;
+    /* 画像の縦横比を維持する */
+
+    vertical-align: bottom;
+    /* インライン画像の下に生じる余白を防ぐ */
+}
+
+
+/* -見出し- */
+/* h1・h2・h3の共通設定 */
+h1,
+h2,
+h3 {
+    margin: 0;
+    /* ブラウザ標準の見出し余白をなくす */
+
+    font-weight: 700;
+    /* 見出しを太字にする */
+}
+
+
+/* -段落- */
+/* p要素の共通設定 */
+p {
+    margin: 0;
+    /* ブラウザ標準の段落余白をなくす */
+}
+
+
+/* -リスト- */
+/* ul・olの共通設定 */
+ul,
+ol {
+    margin: 0;
+    /* リストの外側余白をなくす */
+
+    padding: 0;
+    /* リストの内側余白をなくす */
+
+    list-style: none;
+    /* リスト先頭の「・」や番号を消す */
+}
+
+
+/* -ヘッダー- */
+/* ヘッダーを画面上部に固定する */
+header {
+    position: fixed;
+    /* 画面をスクロールしても同じ位置に表示する */
+
+    top: 0;
+    /* 画面上端に配置 */
+
+    left: 50%;
+    /* 画面中央を基準に配置 */
+
+    transform: translateX(-50%);
+    /* 自分自身の幅の半分だけ左へ移動し、中央揃えにする */
+
+    width: 100%;
+    /* ヘッダーを横幅いっぱいにする */
+
+    /* max-width: 390px; */
+    /* スマートフォン用デザインの最大幅を390pxに制限 */
+
+    height: 55px;
+    /* ヘッダー全体の高さ */
+
+    background-color: #0065B2;
+
+    z-index: 1000;
+    /* 本文などより手前に表示する */
+
+}
+
+
+/* -ヘッダー内- */
+/* ヘッダー内のロゴ・リンク・メニューを横並びにする */
+.headerInner {
+    display: flex;
+    /* 子要素を横方向に並べる */
+
+    align-items: center;
+    /* 子要素を上下中央に揃える */
+
+    width: 100%;
+    /* ヘッダーいっぱいの横幅 */
+
+    height: 100%;
+    /* ヘッダーと同じ高さにする */
+
+    padding: 0 10px;
+    /* ヘッダー左右に10pxの余白を設定 */
+
+    gap: 7px;
+    /* 子要素同士の間隔 */
+}
+
+
+/* -サイトロゴ- */
+/* ロゴを左側へ配置し、右側の要素を押し出す */
+.headerInner h1 {
+    margin-right: auto;
+    /* 右側にautoの余白を作り、右側の要素を押し出す */
+
+    color: #fff;
+}
+
+/* -サイトロゴ- */
+.siteIcon {
+    display: block;
+    /* ロゴをブロック要素として扱う */
+
+    color: #fff;
+    /* SP版のヘッダーに合わせて文字色を設定する */
+
+    font-size: 2.2rem;
+    /* SP版ではPCより少し小さく表示する */
+
+    font-weight: 900;
+    /* ロゴを太くしてサイト名として認識しやすくする */
+
+    line-height: 1;
+    /* ロゴ周辺の余白を抑える */
+
+    white-space: nowrap;
+    /* Trip Noteが改行されないようにする */
+}
+
+
+/* -新規登録・ログイン- */
+/* 新規登録・ログインをボタン風に表示 */
+.headerLink {
+    display: flex;
+    /* ボタン内部をFlexboxで配置 */
+
+    align-items: center;
+    /* 文字を上下中央に揃える */
+
+    justify-content: center;
+    /* 文字を左右中央に揃える */
+
+    min-width: 48px;
+    /* ボタンの最小横幅 */
+
+    height: 27px;
+    /* ボタンの高さ */
+
+    padding: 0 6px;
+    /* ボタン左右の内側余白 */
+
+    border: 1.5px solid #003376;
+    /* 青色の枠線 */
+
+    border-radius: 5px;
+    /* ボタンの角を少し丸くする */
+
+    background-color: #fff;
+    /* ボタン背景を白にする */
+
+    box-shadow: 2px 2px 0 #0065B2;
+    /* ボタン右下に青い影を付ける */
+
+    color: #003376;
+    /* ボタン内の文字色 */
+
+    font-size: 1.05rem;
+    /* ボタンの文字サイズ */
+
+    font-weight: 700;
+    /* ボタン文字を太字にする */
+
+    white-space: nowrap;
+    /* ボタン内の文字を途中で改行しない */
+}
+
+
+/* メニュー */
+/* メニュー本体をヘッダー内のボタンを基準に配置できるようにする */
+.menu {
+    position: relative;
+    /* 子要素のメニュー本体をこの要素を基準にして絶対配置できるようにする */
+
+    flex-shrink: 0;
+    /* ヘッダー内でメニューボタンが横幅によって縮まないようにする */
+}
+
+/* メニューボタン */
+/* ハンバーガーメニューの画像を中央に配置する */
+.menuButton {
+    display: flex;
+    /* メニューボタンをFlexboxとして扱う */
+
+    align-items: center;
+    /* メニューアイコンを上下中央に揃える */
+
+    justify-content: center;
+    /* メニューアイコンを左右中央に揃える */
+
+    width: 30px;
+    /* メニューボタンの横幅を30pxに設定する */
+
+    height: 30px;
+    /* メニューボタンの高さを30pxに設定する */
+
+    cursor: pointer;
+    /* マウスを乗せたときにクリックできる要素であることを示す */
+
+    list-style: none;
+    /* summary要素に表示される標準のリストマーカーを取り除く */
+}
+
+/* summaryの標準マーカーを非表示 */
+/* details要素に表示される標準の三角形を取り除く */
+.menuButton::-webkit-details-marker {
+    display: none;
+    /* WebKit系ブラウザで表示されるsummaryの標準マーカーを非表示にする */
+}
+
+/* メニューアイコン */
+/* ハンバーガーメニューの画像サイズを設定する */
+.menuButton img {
+    display: block;
+    /* 画像をブロック要素として表示し、画像下部の余計な隙間を防ぐ */
+
+    width: 27px;
+    /* メニューアイコンの横幅を27pxに設定する */
+
+    height: 27px;
+    /* メニューアイコンの高さを27pxに設定する */
+}
+
+/* メニュー本体 */
+/* ハンバーガーボタンの右端に合わせてポップアップメニューを表示する */
+.menuNav {
+    position: absolute;
+    /* menu要素を基準にして、ポップアップメニューを自由に配置できるようにする */
+    top: 35px;
+    /* ハンバーガーボタンの下側にメニューを表示する */
+    right: 0;
+    /* メニューの右端をハンバーガーボタンの右端に合わせる */
+    z-index: 1100;
+    /* ヘッダー内の他の要素より手前に表示し、メニュー項目を確実にクリックできるようにする */
+    width: 200px;
+    /* スマートフォンでも各メニュー項目を押しやすくできるようにする */
+    padding: 10px;
+    /* メニューの内側に余白を設定する */
+    border: 2px solid #003376;
+    /* サイトの基本色でメニューの外周を囲む */
+    border-radius: 10px;
+    /* メニューの四隅を丸める */
+    background-color: #ffffff;
+    /* メニューの背景を白にする */
+    box-shadow: 0 5px 15px rgba(0, 51, 118, 0.15);
+    /* メニューをページから少し浮かせて見せる */
+    text-align: left;
+    /* メニュー内の文字を左揃えにする */
+}
+
+
+/* -メニューリスト- */
+/* メニュー内のリストを設定 */
+.menuNav ul {
+    margin: 0;
+    /* リスト外側の余白をなくす */
+
+    padding: 0;
+    /* リスト内側の余白をなくす */
+}
+
+
+/* -メニューグループの区切り- */
+/* 2つ目以降のメニューグループに区切り線を付ける */
+.menuNav ul+ul {
+    margin-top: 6px;
+    /* 前のグループとの間隔 */
+
+    padding-top: 6px;
+    /* 区切り線と文字の間隔 */
+
+    border-top: 1px solid #c9dce9;
+    /* メニューグループ上部に薄い区切り線を付ける */
+}
+
+
+/* メニューリンク */
+/* メニュー項目全体をタップしやすい大きさにし、スマートフォンでの操作性を高める */
+.menuNav a {
+    display: block;
+    /* リンク文字だけでなく、リンクの余白部分もタップできるようにする */
+
+    padding: 9px 8px;
+    /* 上下の余白を9pxにして、スマートフォンでも指で押しやすい高さを確保する */
+
+    color: #003376;
+    /* メニューリンクの文字色をサイトの基本色に設定する */
+
+    font-size: 1.2rem;
+    /* メニューリンクの文字サイズを設定する */
+
+    font-weight: 700;
+    /* メニューリンクを太字にして視認性を高める */
+}
+
+/* メニューリンクにマウスを乗せたときの表示 */
+.menuNav a:hover {
+    background-color: #eef7fc;
+    /* 背景を薄い青色に変える */
+}
+
+
+/* -SNSリスト- */
+/* SNSアイコンを横並びにする */
+.menuNav .snsList {
+    display: flex;
+    /* SNSアイコンを横並びにする */
+
+    align-items: center;
+    /* SNSアイコンを上下中央に揃える */
+
+    justify-content: center;
+    /* SNSアイコンを中央に配置 */
+
+    gap: 15px;
+    /* SNSアイコン同士の間隔 */
+
+    padding-top: 10px;
+    /* 上側に余白を作る */
+}
+
+/* SNSリスト内のliに余計な区切り線を付けない */
+.menuNav .snsList li {
+    border: none;
+    /* 通常のメニューグループ用の線を解除 */
+}
+
+
+/* -SNSリンク- */
+/* SNSアイコンのリンク部分を設定 */
+.menuNav .snsLog {
+    display: block;
+    /* リンクをブロック要素として扱う */
+
+    padding: 0;
+    /* 標準のリンク余白をなくす */
+}
+
+
+/* -SNS画像- */
+/* メニュー内SNSアイコンのサイズ */
+.menuNav .snsLog img {
+    display: block;
+    /* 画像下部の余白を防ぐ */
+
+    width: 30px;
+    /* アイコンの横幅 */
+
+    height: 30px;
+    /* アイコンの高さ */
+}
+
+
+/* -メイン- */
+/* メインコンテンツ全体の横幅を設定 */
+main {
+    width: 100%;
+    /* 親要素いっぱいの横幅 */
+
+    max-width: 390px;
+    /* スマートフォン用デザインの最大幅 */
+
+    margin: 0 auto;
+    /* 左右中央に配置 */
+}
+
+
+/* -ファーストビュー- */
+/* ファーストビュー全体の余白 */
+.top1st {
+    padding: 8px 15px 35px;
+    /* 上・左右・下の順に余白を設定 */
+}
+
+
+/* -メインタイトル- */
+/* Trip Noteのサイトタイトル */
+.top1st h1 {
+    margin-bottom: 2px;
+    /* タイトル下の余白 */
+
+    color: #003376;
+    /* タイトルの文字色 */
+
+    font-size: 2.4rem;
+    /* タイトルの文字サイズ */
+
+    font-weight: 900;
+    /* タイトルを強く太字にする */
+}
+
+
+/* -キャッチコピー- */
+/* ファーストビューのキャッチコピー */
+.topCatch {
+    margin-bottom: 13px;
+    /* キャッチコピー下の余白 */
+
+    color: #003376;
+    /* キャッチコピーの文字色 */
+
+    font-size: 1.6rem;
+    /* キャッチコピーの文字サイズ */
+
+    font-weight: 700;
+    /* キャッチコピーを太字にする */
+
+    text-shadow: 1px 1px 0 #fff;
+    /* 白い影を付けて背景上でも読みやすくする */
+}
+
+
+/* -メイン画像- */
+/* ファーストビュー画像を中央に配置 */
+.topImage {
+    margin: 0 auto 15px;
+    /* 左右中央に配置し、下に15pxの余白を付ける */
+
+    width: 65%;
+    /* 画像表示エリアを全体の65%にする */
+}
+
+
+/* -ファーストビュー画像本体- */
+/* スマートフォンのイメージ画像 */
+.top1stImg {
+    display: block;
+    /* 画像下部の余白を防ぐ */
+
+    width: 100%;
+    /* 親要素の幅いっぱいに表示 */
+
+    margin: 0 auto;
+    /* 左右中央に配置 */
+}
+
+
+/* -ファーストビュー説明- */
+/* ファーストビュー内のサービス説明文 */
+.topMessage {
+    margin-bottom: 17px;
+    /* 説明文の下に余白を作る */
+
+    color: #003376;
+    /* 説明文の文字色 */
+
+    font-size: 1.6rem;
+    /* 説明文の文字サイズ */
+
+    font-weight: 700;
+    /* 説明文を太字にする */
+
+    text-shadow: 1px 1px 0 #fff;
+    /* 背景上でも読みやすくするため白い影を付ける */
+}
+
+/* 2つ目以降の説明文との間隔 */
+.topMessage p+p {
+    margin-top: 12px;
+    /* 前の段落との間に12pxの余白を付ける */
+}
+
+
+/* -しおり作成フォーム- */
+/* しおり作成フォーム全体の横幅 */
+.bookmarkForm {
+    width: 75%;
+    /* フォームを画面幅の75%にする */
+
+    margin: 0 auto;
+    /* フォームを左右中央に配置 */
+}
+
+
+/* -タイトル入力欄- */
+/* しおりタイトル入力エリア */
+.titleForm {
+    width: 100%;
+    /* フォームの横幅いっぱいにする */
+
+    margin-bottom: 10px;
+    /* 入力欄とボタンの間に余白を付ける */
+}
+
+
+/* -タイトル入力欄本体- */
+/* しおりのタイトルを入力するテキスト欄 */
+.titleForm input[type="text"] {
+    display: block;
+    /* 入力欄をブロック要素として扱う */
+
+    width: 100%;
+    /* 親要素いっぱいの横幅 */
+
+    height: 35px;
+    /* 入力欄の高さ */
+
+    padding: 0 12px;
+    /* 入力文字の左右余白 */
+
+    border: none;
+    /* 枠線をなくす */
+
+    border-radius: 5px;
+    /* 入力欄の角を丸くする */
+
+    background-color: #ffffff;
+    /* 入力欄の背景色 */
+
+    color: #003376;
+    /* 入力文字の色 */
+
+    font-size: 1.2rem;
+    /* 入力文字のサイズ */
+
+    font-weight: 700;
+    /* 入力文字を太字にする */
+
+    text-align: center;
+    /* 入力文字を中央揃えにする */
+
+    outline: none;
+    /* 入力時の標準アウトラインを消す */
+}
+
+
+/* -入力欄のプレースホルダー- */
+/* 「しおりのタイトル」の表示色 */
+.titleForm input::placeholder {
+    color: #7da1bd;
+    /* プレースホルダーを薄い青色にする */
+}
+
+
+/* -しおり作成ボタン- */
+/* ボタンを配置するエリア */
+.submitForm {
+    width: 90%;
+    margin: 0 auto;
+    /* フォームの横幅を少し縮める */
+}
+
+
+/* -しおり作成ボタン本体- */
+/* しおり作成ボタンの見た目を設定 */
+.submitForm button {
+    display: flex;
+    /* 文字とアイコンをFlexboxで配置 */
+
+    align-items: center;
+    /* 文字とアイコンを上下中央に揃える */
+
+    justify-content: center;
+    /* 文字とアイコンを左右中央に揃える */
+
+    gap: 8px;
+    /* 文字とアイコンの間隔 */
+
+    width: 100%;
+    /* ボタンを親要素いっぱいにする */
+
+    height: 36px;
+    /* ボタンの高さ */
+
+    border: 1.5px solid #003376;
+    /* 青色の枠線 */
+
+    border-radius: 5px;
+    /* ボタンの角を丸くする */
+
+    background-color: #fff;
+    /* ボタン背景を白にする */
+
+    box-shadow: 2px 2px 0 #0065B2;
+    /* ボタン右下に青い影を付ける */
+
+    color: #003376;
+    /* ボタン文字の色 */
+
+    font-size: 1.4rem;
+    /* ボタン文字のサイズ */
+
+    font-weight: 700;
+    /* ボタン文字を太字にする */
+
+    cursor: pointer;
+    /* クリック可能であることを示す */
+}
+
+
+/* -しおり作成ボタンのアイコン- */
+/* ボタン内の書き込みアイコン */
+.submitForm button img {
+    width: 17px;
+    /* アイコンの横幅 */
+
+    height: 17px;
+    /* アイコンの高さ */
+}
+
+
+/* -セクションタイトル- */
+/* 各セクションの見出し画像 */
+.box_ttl {
+    display: block;
+    /* 画像をブロック要素として扱う */
+
+    width: 220px;
+    /* セクションタイトル画像の横幅 */
+
+    margin: 0 auto 18px;
+    /* タイトル画像を左右中央に配置 */
+}
+
+
+/* -機能紹介- */
+/* 機能紹介エリア全体 */
+.function {
+    width: 100%;
+    /* 機能紹介エリアを画面幅いっぱいにする */
+
+    margin: 0 auto;
+    /* 左右中央に配置 */
+}
+
+
+/* -機能紹介アイテム- */
+/* 各機能を表示するカード */
+.function__item {
+    list-style: none;
+    /* リストの「・」を消す */
+
+    width: 90%;
+    /* カードの横幅を画面の90%にする */
+
+    margin: 0 auto 10px;
+    /* 左右中央に配置し、下に10pxの余白を付ける */
+
+    padding: 10px;
+    /* カード内部の余白 */
+
+    background-color: #fff;
+    /* カードの背景を白にする */
+
+    border-bottom: 2px solid #0065B2;
+    /* カード下部に青い線を付ける */
+}
+
+
+/* -機能紹介のタイトル- */
+/* 各機能名の表示 */
+.function__item h3 {
+    margin-bottom: 5px;
+    /* タイトルと下の内容との間隔 */
+
+    font-size: 1.7rem;
+    /* タイトルの文字サイズ */
+
+    font-weight: 700;
+    /* タイトルを太字にする */
+}
+
+
+/* -画像と説明文の配置- */
+/* 機能アイコンと説明文を横並びにする */
+.function__content {
+    display: flex;
+    /* 画像と文章を横方向に並べる */
+
+    align-items: center;
+    /* 画像と文章を上下中央に揃える */
+
+    justify-content: space-between;
+    /* 画像と文章の間に余白を作って左右に配置する */
+}
+
+
+/* -機能紹介アイコンのエリア- */
+/* アイコンを入れるfigureの幅を設定 */
+.function__item figure {
+    width: 45%;
+    /* カード内の45%を画像エリアとして使用 */
+
+    margin: 0;
+    /* figure標準の余白をなくす */
+}
+
+
+/* -機能紹介アイコン- */
+/* 各機能のアイコン画像 */
+.function__item figure img {
+    width: 100%;
+    /* figureの幅いっぱいに画像を表示 */
+
+    height: auto;
+    /* 画像の縦横比を維持する */
+
+    display: block;
+    /* 画像下部の余白を防ぐ */
+}
+
+
+/* -機能紹介の説明文- */
+/* 各機能の説明文章 */
+.function__item p {
+    width: 50%;
+    /* カード内の50%を文章エリアとして使用 */
+
+    padding: 0 5px;
+    /* 文章左右に少し余白を付ける */
+
+    box-sizing: border-box;
+    /* paddingをwidthに含めて計算する */
+
+    font-size: 1.3rem;
+    /* 機能説明文の文字サイズ */
+
+    font-weight: 500;
+    /* 説明文を少し太くする */
+
+    line-height: 1.6;
+    /* 説明文の行間を設定 */
+
+    text-align: left;
+    /* 説明文を左揃えにする */
+}
+
+
+/* -左右交互配置- */
+/* 2番目・4番目・6番目のカード */
+.function__item:nth-child(even) .function__content {
+    flex-direction: row-reverse;
+    /* 偶数番目だけ画像と文章の左右を入れ替える */
+}
+
+
+/* -会員登録の流れ- */
+/* 会員登録セクション全体 */
+.registration {
+    padding: 45px 10px;
+    /* 左右に10px、下に45pxの余白を設定 */
+}
+
+
+/* -STEP一覧- */
+/* STEPカード全体の上側の余白 */
+.stepList {
+    margin-top: 8px;
+    /* タイトル画像とSTEP一覧の間隔 */
+}
+
+
+/* -STEPカード- */
+/* 各STEPを横並びのカードとして表示 */
+.stepList li {
+    display: flex;
+    /* STEP画像と説明文を横並びにする */
+
+    align-items: center;
+    /* 画像と説明文を上下中央に揃える */
+
+    width: 95%;
+    /* 親要素の横幅を少し縮める */
+
+    margin: 0 auto 8px;
+    /* 左右をautoにして中央寄せし、下に8pxの余白を設定 */
+
+    min-height: 62px;
+    /* カードの最低高さ */
+
+    background-color: #fff;
+    /* STEPカードの背景を白にする */
+}
+
+
+/* -STEP画像- */
+/* STEP01～03の画像 */
+.stepList li>img {
+    flex-shrink: 0;
+    /* 指定サイズいっぱいに画像を表示し、必要に応じて一部を切り取る */
+
+    width: 70px;
+    /* STEP画像の横幅 */
+
+    height: 62px;
+    /* STEP画像の高さ */
+
+    object-fit: cover;
+    /* 指定サイズに合わせて画像を表示 */
+}
+
+
+/* -STEP説明- */
+/* 各STEPの説明文 */
+.stepList li p {
+    flex: 1;
+    /* 残りのスペースを説明文が使用する */
+
+    padding: 0 10px 0 20px;
+    /* 説明文の左側に20px、右側に10pxの余白を付ける */
+
+    color: #003376;
+    /* 説明文の文字色 */
+
+    font-size: 1.3rem;
+    /* 登録説明文の文字サイズ */
+
+    line-height: 1.5;
+    /* 説明文の行間 */
+
+    font-weight: 500;
+    /* 説明文を少し太くする */
+
+    text-align: left;
+    /* 説明文を左揃えにする */
+}
+
+
+/* -よくある質問- */
+/* FAQセクション全体 */
+.QA {
+    padding: 0 20px 45px;
+    /* 左右20px、下45pxの余白を設定 */
+}
+
+
+/* -FAQ一覧- */
+/* FAQ一覧とタイトル画像の間隔 */
+.qaList {
+    margin-top: 8px;
+    /* FAQ一覧の上側に8pxの余白 */
+}
+
+
+/* -FAQ- */
+/* 各質問と回答をまとめるdetails */
+.qaList details {
+    margin-bottom: 7px;
+    /* FAQ同士の間隔 */
+
+    background-color: #fff;
+    /* FAQ全体の背景を白にする */
+}
+
+
+/* -質問部分- */
+/* FAQの質問文をクリックできる見出しとして表示 */
+.qaList summary {
+    position: relative;
+    /* ＋・−記号を配置する基準 */
+
+    display: flex;
+    /* 質問文をFlexboxで配置 */
+
+    align-items: center;
+    /* 質問文を上下中央に揃える */
+
+    min-height: 36px;
+    /* 質問部分の最低高さ */
+
+    padding: 5px 30px 5px 10px;
+    /* 上・右・下・左の内側余白 */
+
+    background-color: #0068AD;
+    /* 質問部分の背景色 */
+
+    color: #fff;
+    /* 質問文の文字色 */
+
+    font-size: 1.4rem;
+    /* 質問文の文字サイズ */
+
+    font-weight: 700;
+    /* 質問文を太字にする */
+
+    text-align: left;
+    /* 質問文を左揃えにする */
+
+    cursor: pointer;
+    /* クリック可能であることを示す */
+
+    list-style: none;
+    /* 標準のマーカーを消す */
+}
+
+/* summaryの標準マーカーを消す */
+.qaList summary::-webkit-details-marker {
+    display: none;
+    /* Chrome・Safariの標準三角形を非表示にする */
+}
+
+
+/* -開閉記号- */
+/* 質問右側に＋記号を表示 */
+.qaList summary::after {
+    content: "+";
+    /* 開いていない状態では＋を表示 */
+
+    position: absolute;
+    /* summaryを基準に自由な位置へ配置 */
+
+    top: 50%;
+    /* summaryの縦方向中央 */
+
+    right: 9px;
+    /* 右端から9pxの位置 */
+
+    transform: translateY(-50%);
+    /* 自分の高さの半分だけ上へ移動して中央揃え */
+
+    font-size: 1.5rem;
+    /* ＋記号の文字サイズ */
+
+    font-weight: 400;
+    /* ＋記号を通常の太さにする */
+}
+
+
+/* -開いたときの記号- */
+/* FAQを開いたときは＋を−に変更 */
+.qaList details[open] summary::after {
+    content: "−";
+
+    /* 開いた状態では−記号を表示 */
+}
+
+
+/* -回答- */
+/* FAQを開いたときに表示される回答 */
+.qaList details>p {
+    padding: 10px;
+    /* 回答文の内側余白 */
+
+    background-color: #fff;
+    /* 回答部分の背景色 */
+
+    color: #003376;
+    /* 回答文の文字色 */
+
+    font-size: 1.4rem;
+    /* Q&A本文の文字サイズ */
+
+    line-height: 1.55;
+    /* 回答文の行間 */
+
+    font-weight: 500;
+    /* 回答文を少し太くする */
+
+    text-align: left;
+    /* 回答文を左揃えにする */
+}
+
+
+
+/* -お問い合わせ- */
+/* お問い合わせセクション全体 */
+.inquiry {
+    padding: 0 10px 60px;
+    /* 左右10px、下60pxの余白を設定 */
+}
+
+
+/* -お問い合わせボタン- */
+/* LINE・メールのお問い合わせボタン */
+.inquiryicon {
+    display: flex;
+    /* アイコンと文字を横並びにする */
+
+    align-items: center;
+    /* アイコンと文字を上下中央に揃える */
+
+    justify-content: center;
+    /* アイコンと文字を左右中央に配置 */
+
+    gap: 8px;
+    /* アイコンと文字の間隔 */
+
+    width: 80%;
+    /* お問い合わせボタンの横幅を80%にする */
+
+    height: 34px;
+    /* ボタンの高さ */
+
+    margin: 8px auto 0;
+    /* ボタンを中央に配置し、8pxの余白を付ける */
+
+    border: 1.5px solid #0068AD;
+    /* 青色の枠線 */
+
+    border-radius: 5px;
+    /* ボタンの角を丸くする */
+
+    background-color: #fff;
+    /* ボタン背景を白にする */
+
+    box-shadow: 2px 2px 0 #0068AD;
+    /* ボタン右下に青い影を付ける */
+
+    color: #003376;
+    /* ボタン文字の色 */
+
+    font-size: 1.4rem;
+    /* ボタン文字のサイズを14pxにする */
+
+    font-weight: 700;
+    /* ボタン文字を太字にする */
+}
+
+
+/* -お問い合わせアイコン- */
+/* LINE・メールのアイコン */
+.inquiryicon img {
+    width: 20px;
+    /* アイコンの横幅 */
+
+    height: 20px;
+    /* アイコンの高さ */
+
+    object-fit: contain;
+    /* アイコンの縦横比を維持して収める */
+}
+
+
+
+/* -News- */
+/* Newsセクション全体 */
+.news {
+    padding: 0 15px 45px;
+    /* 左右15px、下45pxの余白を設定 */
+}
+
+
+/* -News一覧- */
+/* News一覧の下側に点線を表示 */
+.news ul {
+    margin-top: 8px;
+    /* タイトル画像と一覧の間隔 */
+
+    border-bottom: 2px dotted #0068AD;
+    /* News一覧の下に青い点線を付ける */
+}
+
+
+/* -News項目- */
+/* 各News項目の区切り */
+.news li {
+    border-bottom: 1px solid rgba(0, 104, 173, 0.2);
+    /* 項目同士を区切る薄い線 */
+}
+
+
+/* 最後のNews項目だけ下線を消す */
+.news li:last-child {
+    border-bottom: none;
+    /* 一覧全体の点線だけを残す */
+}
+
+
+/* -Newsリンク- */
+/* Newsタイトルと日付をまとめたリンク */
+.news a {
+    display: block;
+    /* リンク全体をクリックできるようにする */
+
+    padding: 7px 0;
+    /* News項目の上下余白 */
+
+    color: #003376;
+    /* News文字の色 */
+
+    font-size: 1.4rem;
+    /* News本文の文字サイズ */
+
+    line-height: 1.4;
+    /* News本文の行間 */
+
+    text-align: left;
+    /* News本文を左揃えにする */
+}
+
+
+/* -News日付- */
+/* Newsの日付部分 */
+.news time {
+    display: inline-block;
+    /* タイトルと横並びにする */
+
+    margin-right: 7px;
+    /* 日付とタイトルの間隔 */
+
+    color: #0068AD;
+    /* 日付の文字色 */
+
+    font-size: 1.2rem;
+    /* 日付の文字サイズ */
+
+    font-weight: 700;
+    /* 日付を太字にする */
+}
+
+
+
+/* -フッター- */
+/* フッター全体の基本設定 */
+footer {
+    width: 100%;
+    /* フッターを親要素いっぱいにする */
+
+    /* max-width: 390px; */
+    /* スマートフォン用デザインの最大幅 */
+
+    margin: 0 auto;
+    /* 左右中央に配置 */
+
+    padding: 18px 15px 12px;
+    /* 上・左右・下の内側余白 */
+
+    background-color: #0068AD;
+    /* フッターの背景色 */
+
+    color: #fff;
+    /* フッター内の基本文字色 */
+}
+
+
+/* -フッターロゴ- */
+/* フッター内のTrip Noteロゴ */
+.footerLogo {
+    display: block;
+    /* ロゴ全体をブロック要素にする */
+
+    margin-bottom: 7px;
+    /* ロゴと下のナビゲーションとの間隔 */
+
+    color: #fff;
+    /* ロゴの文字色 */
+}
+
+
+/* フッターロゴの文字 */
+.footerLogo p {
+    font-size: 1.5rem;
+    /* ロゴ文字のサイズ */
+
+    font-weight: 900;
+    /* ロゴ文字を強く太字にする */
+}
+
+
+/* -フッターナビ- */
+/* フッター内のナビゲーションを横並びにする */
+.footerNav {
+    display: flex;
+    /* ナビゲーションのグループを横並びにする */
+
+    justify-content: center;
+    /* ナビゲーション全体を中央に配置 */
+
+    gap: 25px;
+    /* ナビゲーションのグループ同士の間隔 */
+
+    margin-bottom: 12px;
+    /* ナビゲーションとSNSの間隔 */
+}
+
+
+/* -フッターナビリスト- */
+/* 各ナビゲーションの文字を左揃えにする */
+.footerNav ul {
+    text-align: left;
+    /* ナビゲーション項目を左揃えにする */
+}
+
+
+/* -フッターリンク- */
+/* フッター内の各リンク */
+.footerNav a {
+    display: block;
+    /* リンク全体をクリックできるようにする */
+
+    padding: 1px 0;
+    /* リンク上下に少し余白を付ける */
+
+    color: #D5ECFF;
+    /* フッターリンクの文字色 */
+
+    font-size: 1.4rem;
+    /* フッターリンクの文字サイズ */
+
+    line-height: 2;
+    /* フッターリンクの行間 */
+}
+
+
+/* -SNS- */
+/* フッターのSNSアイコンを横並びにする */
+.footerSns {
+    display: flex;
+    /* SNSアイコンを横並びにする */
+
+    align-items: center;
+    /* SNSアイコンを上下中央に揃える */
+
+    justify-content: center;
+    /* SNSアイコンを中央に配置 */
+
+    gap: 15px;
+    /* SNSアイコン同士の間隔 */
+
+    margin-bottom: 10px;
+    /* SNSとコピーライトの間隔 */
+}
+
+
+/* -SNSリンク- */
+/* SNSアイコンのリンク */
+.footerSns a {
+    display: block;
+    /* リンクをブロック要素として扱う */
+}
+
+
+/* -SNS画像- */
+/* フッター内のSNSアイコン */
+.footerSns img {
+    display: block;
+    /* 画像下部の余白を防ぐ */
+
+    width: 25px;
+    /* アイコンの横幅 */
+
+    height: 25px;
+    /* アイコンの高さ */
+
+    object-fit: contain;
+    /* アイコンの縦横比を維持して表示 */
+}
+
+
+/* -コピーライト- */
+/* フッター下部のコピーライト */
+footer small {
+    display: block;
+    /* コピーライトを独立したブロックとして表示 */
+
+    color: #D5ECFF;
+    /* コピーライトの文字色 */
+
+    font-size: 1.1rem;
+    /* コピーライトの文字サイズ */
+}
+
+
+
+/* -Topへ戻るボタン- */
+/* ページを上部へ戻るための固定ボタン */
+.btn_top {
+    position: fixed;
+    /* 画面上の決まった位置に固定する */
+
+    right: 15px;
+    /* 画面右端から15px離す */
+
+    bottom: 20px;
+    /* 画面下端から20px離す */
+
+    display: flex;
+    /* 矢印をFlexboxで配置 */
+
+    align-items: center;
+    /* 矢印を上下中央に配置 */
+
+    justify-content: center;
+    /* 矢印を左右中央に配置 */
+
+    width: 27px;
+    /* ボタンの横幅 */
+
+    height: 27px;
+    /* ボタンの高さ */
+
+    border-radius: 3px;
+    /* ボタンの角を少し丸くする */
+
+    background-color: rgba(0, 101, 178, 0.35);
+    /* 半透明の青色背景 */
+
+    color: #fff;
+    /* 矢印の色 */
+
+    font-size: 1.05rem;
+    /* 矢印の文字サイズ */
+
+    text-align: center;
+    /* 矢印を中央揃えにする */
+}
+
+
+/* タブレット・PC共通設定
+   画面幅が768px以上になったときに適用 */
+@media screen and (min-width: 768px) {
+
+    /* -ページ全体- */
+    body {
+        padding-top: 70px;
+        /* PC用ヘッダーが固定表示される分だけ本文を下へずらし、ヘッダーと本文が重ならないようにする */
+
+        font-size: 1.6rem;
+    }
+
+    /* -ヘッダー- */
+    header {
+        max-width: none;
+        /* スマートフォン用に設定されている390pxの幅制限を解除し、PC画面いっぱいにヘッダーを表示する */
+
+        height: 70px;
+        /* PC用ヘッダーの高さを70pxに設定し、スマートフォンより余裕のあるナビゲーション領域を確保する */
+
+        background-color: #0068AD;
+        /* ページ背景と同じ色にして、ヘッダーとページが自然につながって見えるようにする */
+    }
+
+    /* -ヘッダー内- */
+    /* ヘッダー内のロゴ・リンク・メニューを横並びにする */
+    .headerInner {
+
+        display: flex;
+        /* 子要素をFlexboxで横方向に並べる */
+
+        align-items: center;
+        /* 子要素を上下中央に揃える */
+
+        max-width: 1400px;
+        /* ヘッダー内のコンテンツが広がりすぎないよう最大幅を1400pxにする */
+
+        margin: 0 auto;
+        /* 左右の余白をautoにして、ヘッダー内のコンテンツを中央に配置する */
+
+        padding: 0 30px;
+        /* ヘッダー内の左右に30pxの余白を設定する */
+
+        gap: 20px;
+        /* ロゴ・リンク・メニューなどの要素同士の間隔を20pxにする */
+
+    }
+
+    /* -サイトロゴ- */
+    .siteIcon {
+        display: block;
+        /* ロゴをブロック要素として扱う */
+
+        color: #fff;
+        /* 濃い青のヘッダーに合わせて文字を白色にする */
+
+        font-size: 2.8rem;
+        /* PC版のロゴを大きく表示する */
+
+        font-weight: 900;
+        /* ロゴを太くして、サイト名として目立たせる */
+
+        line-height: 1;
+        /* ロゴ周辺の余白を抑える */
+
+        white-space: nowrap;
+        /* Trip Noteが途中で改行されないようにする */
+    }
+
+    /* -新規登録・ログイン- */
+    .headerLink {
+        display: none;
+        /* PCでは新規登録・ログインボタンを非表示にする */
+
+        min-width: 80px;
+        /* ボタンの最低幅を確保し、文字数によってボタンが小さくなりすぎないようにする */
+
+        height: 32px;
+        /* PCでも操作しやすい高さを確保し、ヘッダー内で他の要素と高さを揃える */
+
+        padding: 0 12px;
+        /* ボタン文字の左右に余白を設け、窮屈に見えないようにする */
+
+        font-size: 1.2rem;
+        /* PCではスマートフォンより文字を少し大きくして視認性を高める */
+    }
+
+    /* -メニュー本体の親要素- */
+    .menu {
+        position: static;
+        /* PCではポップアップの基準位置として使用しない */
+
+        flex-shrink: 0;
+        /* メニューが横幅によって縮まないようにする */
+    }
+
+    /* -メニューボタン- */
+    .menuButton {
+        display: none;
+        /* PCではハンバーガーメニューを使わず、通常のナビゲーションを表示するため非表示にする */
+    }
+
+    /* -メニュー本体- */
+    .menuNav {
+        position: static;
+        /* スマートフォン用のポップアップ配置を解除し、通常のヘッダー内に配置する */
+
+        display: flex !important;
+        /* ナビゲーション内の要素を横方向に並べる */
+
+        align-items: center;
+        /* ナビゲーションの各要素を上下中央に揃える */
+
+        width: auto;
+        /* スマートフォン用の固定幅を解除し、内容に合わせて横幅を決める */
+
+        padding: 0;
+        /* スマートフォン用ポップアップの内側余白を解除する */
+
+        border: none;
+        /* PCではポップアップとして表示しないため、枠線を解除する */
+
+        border-radius: 0;
+        /* PCではポップアップの角丸を必要としないため解除する */
+
+        background-color: transparent;
+        /* ヘッダーの背景をそのまま見せるため、ナビゲーションの背景を透明にする */
+
+        box-shadow: none;
+        /* ポップアップ用の影を解除し、ヘッダーと一体化させる */
+
+        text-align: center;
+        /* ナビゲーション内の文字を中央基準で扱う */
+    }
+
+    /* -メニューリスト- */
+    .menuNav ul {
+        display: flex;
+        /* メニュー項目を縦並びから横並びへ変更し、PC向けのナビゲーションにする */
+
+        align-items: center;
+        /* メニュー項目を上下中央に揃える */
+
+        gap: 20px;
+        /* メニュー項目同士が詰まりすぎないよう20pxの間隔を設ける */
+
+        margin: 0;
+        /* SP版で設定されているulの外側の余白を解除し、PC版でグループ同士の位置がずれないようにする */
+
+        padding: 0;
+        /* SP版で設定されているulの内側の余白を解除し、PC版のナビゲーションをヘッダー内に収める */
+
+        list-style: none;
+        /* ulの標準のリストマーカーが表示されないようにする */
+    }
+
+    /* -メニューグループの区切り- */
+    .menuNav ul+ul {
+        margin-top: 0;
+        /* PCでは縦方向の余白を解除する */
+
+        padding-top: 0;
+        /* PCでは上側の余白を解除する */
+
+        padding-left: 20px;
+        /* グループの左側に余白を作り、区切り線との間隔を確保する */
+
+        margin-left: 5px;
+        /* 前のグループとの間に少し余白を作る */
+
+        border-top: none;
+        /* SP版で使用している上側の区切り線を解除する */
+
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        /* PCではグループ間を縦線で区切る */
+    }
+
+    /* -メニューリンク- */
+    .menuNav a {
+        padding: 5px 0;
+        /* リンクの上下に余白を設け、クリックしやすい領域を確保する */
+
+        font-size: 1.3rem;
+        /* PC用のナビゲーションとして読みやすい文字サイズに設定する */
+
+        white-space: nowrap;
+        /* メニュー名が途中で改行されてレイアウトが崩れないようにする */
+
+        color: #fff;
+        /* 濃い青のヘッダーに合わせ、文字を白色にする */
+    }
+
+    /* -SNSリスト- */
+    .menuNav .snsList {
+        margin-left: 20px;
+        /* 通常のナビゲーションとSNSアイコンの間に余白を設け、グループを視覚的に分ける */
+
+        padding-top: 0;
+        /* スマートフォン用の上側余白を解除し、PCではナビゲーションと同じ高さに揃える */
+
+        gap: 10px;
+        /* SNSアイコン同士の間隔を10pxにして、まとまりを保ちながら見やすく配置する */
+    }
+
+    /* -SNS画像- */
+    .menuNav .snsLog img {
+        width: 24px;
+        /* PCではSNSアイコンを24pxに統一し、ナビゲーションとのバランスを取る */
+
+        height: 24px;
+        /* 横幅と同じ24pxにして、SNSアイコンを正方形で表示する */
+    }
+
+    /* -メイン- */
+    main {
+        max-width: 1200px;
+        /* メインコンテンツが大画面で広がりすぎないよう最大幅を1200pxに設定する */
+
+        margin: 0 auto;
+        /* メインコンテンツを画面中央に配置する */
+    }
+
+    /* -ファーストビュー- */
+    .top1st {
+        display: grid;
+        /* PCではGridを使用して、テキストと画像を左右に配置しやすくする */
+
+        grid-template-columns: 1.3fr 0.9fr;
+        /* ファーストビューを左右2列に分け、テキストと画像をバランスよく配置する */
+
+        align-items: center;
+        /* 左右のコンテンツを縦方向の中央に揃える */
+
+        min-height: 500px;
+        /* PC画面でファーストビューとして十分な高さを確保する */
+
+        padding: 50px 80px;
+        /* コンテンツが画面端に近づきすぎないよう上下50px、左右80pxの余白を設定する */
+    }
+
+    /* -メインタイトル- */
+    .top1st h1 {
+        grid-column: 1;
+        /* タイトルをGridの左側の列に配置する */
+
+        font-size: 3.2rem;
+        /* PCではタイトルを大きくして、ファーストビューの主役として目立たせる */
+
+        text-align: left;
+        /* PCではタイトルを左揃えにして、本文との視線の流れを作る */
+    }
+
+    /* -キャッチコピー- */
+    .topCatch {
+        grid-column: 1;
+        /* キャッチコピーをタイトルと同じ左側の列に配置する */
+
+        font-size: 2rem;
+        /* タイトルを補足する重要な情報として、SP版より大きく表示する */
+
+        text-align: left;
+        /* タイトルと揃えて左揃えにし、まとまりのあるレイアウトにする */
+    }
+
+    /* -ファーストビュー画像- */
+    .topImage {
+        grid-column: 2;
+        /* サービスイメージをGridの右側の列に配置する */
+
+        grid-row: 1 / 5;
+        /* ファーストビュー内の複数行にまたがって右側に配置する */
+
+        width: 75%;
+        /* 右側の列に対して画像を75%程度の大きさで表示し、左右のバランスを取る */
+
+        margin: 0 auto;
+        /* 画像を右側の列の中央に配置する */
+    }
+
+    /* -ファーストビュー説明- */
+    .topMessage {
+        grid-column: 1;
+        /* サービス説明をタイトルやキャッチコピーと同じ左側に配置する */
+
+        font-size: 1.8rem;
+        /* PCでも読みやすい大きさを確保し、サービス内容を伝えやすくする */
+
+        text-align: left;
+        /* 左側のコンテンツとして文章を左揃えにする */
+    }
+
+    /* -しおり作成フォーム- */
+    .bookmarkForm {
+        grid-column: 1;
+        /* しおり作成フォームをファーストビュー左側のコンテンツとして配置する */
+
+        width: 80%;
+        /* 左側の列の中で大きくなりすぎないよう、幅を80%に制限する */
+
+        margin: 0;
+        /* SP版の中央寄せを解除し、左側のコンテンツとして配置する */
+    }
+
+    /* しおり作成フォーム */
+    .titleForm input[type="text"] {
+        font-size: 1.5rem;
+    }
+
+    .submitForm button {
+        font-size: 1.6rem;
+    }
+
+    .box_ttl {
+        width: 400px;
+        /* PC版のタイトル画像のサイズ */
+    }
+
+    /* -機能紹介- */
+    .function {
+        width: 100%;
+        /* メインコンテンツの横幅を使用し、PCでは機能紹介を広く表示する */
+
+        padding: 0 40px 100px;
+        /* 左右に40pxの余白を作り、下に100pxの余白を設けて次のセクションと離す */
+    }
+
+    /* -機能一覧- */
+    .functionList {
+        display: grid;
+        /* 機能カードをGridで配置し、PCでは複数列に並べる */
+
+        grid-template-columns: repeat(3, 1fr);
+        /* 機能カードを3列に配置し、PCでは複数段で見せやすくする */
+
+        gap: 20px;
+        /* カード同士に20pxの間隔を設け、隣接したカードが詰まって見えないようにする */
+    }
+
+    /* -機能紹介カード- */
+    .function__item {
+        width: 100%;
+        /* Gridの各列いっぱいにカードを表示する */
+
+        margin: 0;
+        /* SP版で設定しているカード間の余白を解除し、Gridのgapで間隔を管理する */
+
+        padding: 20px;
+        /* カード内に20pxの余白を設け、文字やアイコンが端に寄りすぎないようにする */
+
+        min-height: 240px;
+        /* 6枚のカードの高さを揃えやすくし、一覧として整った見た目にする */
+
+        border-bottom: 3px solid #0065B2;
+        /* Topで使用しているサイトカラーの下線を付け、カードをサイト全体のデザインに統一する */
+
+        border-radius: 4px;
+        /* カードの角を少し丸め、ボタンや他のUIと統一感のある柔らかい印象にする */
+
+        background-color: #fff;
+        /* ページ背景とカードを区別し、機能ごとの情報を読み取りやすくする */
+    }
+
+    /* -機能紹介タイトル- */
+    .function__item h3 {
+        margin-bottom: 15px;
+        /* タイトルとアイコンの間に余白を作り、情報が詰まって見えないようにする */
+
+        font-size: 2.0rem;
+        /* PCでは機能名を少し大きくして、カードの見出しとして認識しやすくする */
+
+        text-align: center;
+        /* 機能名を中央揃えにし、カード上部の視覚的な中心を作る */
+    }
+
+    /* -機能紹介内容- */
+    .function__content {
+        display: block;
+        /* SP版の横並びを解除し、PCではアイコンと説明を縦方向に配置する */
+    }
+
+    /* -機能紹介アイコン- */
+    .function__item figure {
+        width: 100%;
+        /* アイコンエリアをカード全体の幅として扱い、中央配置しやすくする */
+
+        margin: 0 auto 15px;
+        /* アイコンを中央配置し、下に15pxの余白を作って説明文と分ける */
+
+        text-align: center;
+        /* figure内のアイコンを中央揃えにする */
+    }
+
+    .function__item figure img {
+        width: 110px;
+        /* PCではアイコンを110pxに統一し、カード内で十分に視認できる大きさにする */
+
+        height: 110px;
+        /* 高さも110pxに統一して、各カードのアイコンサイズを揃える */
+
+        object-fit: contain;
+        /* アイコン画像の縦横比を維持しながら、指定サイズ内に収める */
+
+        margin: 0 auto;
+        /* アイコン自体を左右中央に配置する */
+    }
+
+    /* -機能紹介説明- */
+    .function__item p {
+        width: 100%;
+        /* 説明文をカードの横幅いっぱいで使用する */
+
+        padding: 0;
+        /* SP版の左右余白を解除し、PCではカード内paddingを利用して整える */
+
+        font-size: 1.5rem;
+        /* PCでも読みやすい文字サイズに設定する */
+
+        line-height: 1.7;
+        /* 行間を広げて文章が詰まって見えないようにする */
+
+        text-align: left;
+        /* 長い文章を読みやすくするため、説明文は左揃えにする */
+    }
+
+    /* -会員登録の流れ- */
+    .registration {
+        width: 100%;
+        /* メインコンテンツの横幅いっぱいで使用する */
+
+        margin: 0 auto;
+        /* 登録セクションを中央に配置する */
+
+        padding: 0 40px 100px;
+        /* PCでは左右40px、下100pxの余白を設定してセクション間に十分な空間を作る */
+    }
+
+    /* -STEP一覧- */
+    .stepList {
+        display: grid;
+        /* STEPをGridで配置し、PCでは3つを横並びにする */
+
+        grid-template-columns: repeat(3, 1fr);
+        /* STEP01〜03を均等な3列に配置する */
+
+        gap: 20px;
+        /* STEPカード同士に20pxの間隔を設ける */
+
+        margin-top: 20px;
+        /* セクションタイトルとSTEPカードの間に余白を作る */
+    }
+
+    /* -STEPカード- */
+    .stepList li {
+        display: flex;
+        /* STEPカード内をFlexboxで構成し、画像と説明文を縦方向に整列しやすくする */
+
+        flex-direction: column;
+        /* PCでは画像を上、説明文を下に配置する */
+
+        align-items: center;
+        /* 画像と説明文をカード中央に揃える */
+
+        width: 100%;
+        /* Gridの列幅いっぱいにカードを表示する */
+
+        min-height: 220px;
+        /* STEPカードの最低高さを揃え、3つのカードを同じ高さに見せやすくする */
+
+        margin: 0 auto;
+        /* SP版のカード間余白を解除し、Gridのgapで間隔を管理する */
+
+        padding: 15px 15px 20px;
+        /* カード内部に余白を設け、画像や説明文が端に近づかないようにする */
+
+        background-color: #fff;
+        /* STEPカードを白背景にして、ページ背景から区別する */
+
+        border-bottom: 3px solid #0065B2;
+        /* 機能紹介と同じサイトカラーの下線を付け、カードデザインを統一する */
+
+        border-radius: 4px;
+        /* 機能紹介カードと同じ角丸にして、セクション間のデザインを統一する */
+    }
+
+    /* -STEP画像- */
+    .stepList li>img {
+        flex-shrink: 0;
+        /* カード幅が変化しても画像が意図せず縮小されないようにする */
+
+        width: 100%;
+        /* STEPカード内で画像表示領域を最大限使用する */
+
+        max-width: 180px;
+        /* 画像が大きくなりすぎないよう最大幅を180pxに制限する */
+
+        height: auto;
+        /* 元画像の縦横比を維持して表示する */
+
+        object-fit: contain;
+        /* 画像全体が見えるように枠内へ収める */
+
+        margin-bottom: 15px;
+        /* 画像と説明文の間に余白を作る */
+    }
+
+    /* -STEP説明- */
+    .stepList li p {
+        flex: none;
+        /* SP版のflex設定を解除し、PCでは文章の高さを内容に合わせる */
+
+        width: 100%;
+        /* 説明文をカードの横幅いっぱいにする */
+
+        padding: 0;
+        /* SP版の左右余白を解除し、カードのpaddingを利用する */
+
+        color: #003376;
+        /* サイトの基本色を使用して、全体の文字色を統一する */
+
+        font-size: 1.5rem;
+        /* PCでも読みやすい文字サイズにする */
+
+        line-height: 1.7;
+        /* 行間を広げて説明文を読みやすくする */
+
+        font-weight: 500;
+        /* 通常の本文より少し太くして、STEPの説明を認識しやすくする */
+
+        text-align: center;
+        /* STEP説明を中央揃えにして、カード全体のまとまりを出す */
+    }
+
+    /* -よくある質問- */
+    .QA {
+        width: 100%;
+        /* FAQセクションを親要素の横幅いっぱいに使用する */
+
+        padding: 0 0 40px;
+        /* PC画面では左右の余白を設定せず、下に60pxの余白を設ける */
+    }
+
+    /* -FAQ一覧- */
+    .qaList {
+        display: grid;
+        /* FAQをGridで配置し、PCでは2列で表示する */
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        /* FAQを均等な2列に分け、長い文章でも列幅を適切に調整できるようにする */
+
+        gap: 20px 20px;
+        /* FAQ同士の縦方向・横方向に20pxの間隔を設け、見やすく配置する */
+
+        width: 100%;
+        /* FAQ一覧をQAセクション内で最大限使用する */
+
+        padding: 0 40px 60px;
+        /* PCでは左右40pxの余白を確保し、機能紹介や登録STEPと横幅を揃える */
+
+        margin: 30px auto 0;
+        /* FAQ一覧を中央配置し、タイトルとの間に30pxの余白を設けてまとまりを持たせる */
+
+        align-items: start;
+        /* 片方のFAQが開いても、同じ行のもう一方まで高さが伸びないようにする */
+    }
+
+    /* -FAQ本体- */
+    .qaList details {
+        display: block;
+        /* 各FAQを独立したブロックとして扱い、開閉時の高さを個別に管理する */
+
+        width: 100%;
+        /* Gridの列幅いっぱいにFAQを表示する */
+
+        margin: 0;
+        /* Gridのgapで間隔を管理するため、個別の下余白を設定しない */
+
+        padding: 0;
+        /* details自体には余計な内側余白を設定せず、summaryと回答側で管理する */
+
+        border-radius: 5px;
+        /* FAQの角を少し丸め、カード全体を柔らかい印象にする */
+
+        background-color: #fff;
+        /* 回答部分を含めたFAQ全体の背景を白にする */
+
+        align-self: start;
+        /* 同じ行のFAQが開いたとき、隣のFAQまで同じ高さに引き伸ばされるのを防ぐ */
+    }
+
+    /* -FAQ質問部分- */
+    .qaList summary {
+        position: relative;
+        /* ::afterで表示する開閉記号の位置をsummary基準にする */
+
+        display: flex;
+        /* 質問文をFlexboxで扱い、上下中央に配置しやすくする */
+
+        align-items: center;
+        /* 質問文をsummaryの上下中央に揃える */
+
+        width: 100%;
+        /* FAQカードの横幅いっぱいをクリック領域として使用する */
+
+        min-height: 48px;
+        /* PCでもクリックしやすい最低高さを確保する */
+
+        padding: 8px 45px 8px 18px;
+        /* 右側に開閉記号用の45pxを確保し、質問文が記号と重ならないようにする */
+
+        box-sizing: border-box;
+        /* paddingをwidthの計算に含め、指定した横幅からはみ出さないようにする */
+
+        background-color: #0068AD;
+        /* Topと同系統の青を使用し、FAQの質問部分を目立たせる */
+
+        color: #fff;
+        /* 青背景とのコントラストを確保するため、質問文を白色にする */
+
+        font-size: 1.6rem;
+        /* PCでも質問文を読みやすいサイズにする */
+
+        font-weight: 700;
+        /* 質問部分を太字にして、回答部分との情報階層を明確にする */
+
+        text-align: left;
+        /* 質問文は文章として読みやすい左揃えにする */
+
+        cursor: pointer;
+        /* マウスを重ねたとき、クリックできる要素であることを示す */
+
+        list-style: none;
+        /* ブラウザ標準のsummaryマーカーを非表示にする */
+    }
+
+    /* -FAQ標準マーカー- */
+    .qaList summary::-webkit-details-marker {
+        display: none;
+        /* ChromeやSafariで表示される標準の三角形を非表示にし、独自の＋・−記号を使用する */
+    }
+
+    /* -FAQ開閉記号- */
+    .qaList summary::after {
+        content: "+";
+        /* FAQが閉じているときは＋を表示し、クリックすると開けることを視覚的に示す */
+
+        position: absolute;
+        /* summaryを基準に開閉記号を自由に配置する */
+
+        top: 50%;
+        /* summaryの高さの中央位置を基準にする */
+
+        right: 18px;
+        /* FAQ右端から18px離して配置し、質問文との距離を確保する */
+
+        transform: translateY(-50%);
+        /* 記号自身の高さの半分だけ上へ移動し、縦方向の中央に揃える */
+
+        font-size: 1.8rem;
+        /* 開閉記号を質問文より少し大きくして、操作箇所を認識しやすくする */
+
+        font-weight: 400;
+        /* 記号は通常の太さにして、質問文より強くなりすぎないようにする */
+    }
+
+    /* -FAQ開閉記号（開いた状態）- */
+    .qaList details[open] summary::after {
+        content: "−";
+        /* FAQが開いたときは＋を−へ変更し、現在開いている状態であることを示す */
+    }
+
+    /* -FAQ回答- */
+    .qaList details>p {
+        display: block;
+        /* 回答を独立したブロックとして表示し、質問部分の下へ配置する */
+
+        width: 100%;
+        /* 回答をFAQカードの横幅いっぱいにする */
+
+        padding: 15px 18px;
+        /* 回答文の上下左右に余白を設け、質問部分と区別しながら読みやすくする */
+
+        box-sizing: border-box;
+        /* paddingをwidthに含め、回答がカードの横幅からはみ出さないようにする */
+
+        background-color: #fff;
+        /* 質問部分の青と対比させるため、回答部分は白背景にする */
+
+        color: #003376;
+        /* サイトの基本色を使用して、本文の色を統一する */
+
+        font-size: 1.5rem;
+        /* PCでも回答文を読みやすいサイズにする */
+
+        line-height: 1.7;
+        /* 行間を広げて、複数行の回答でも読みやすくする */
+
+        font-weight: 500;
+        /* 通常の本文より少し太くし、視認性を高める */
+
+        text-align: left;
+        /* 回答文は文章として読みやすい左揃えにする */
+    }
+
+    /* -お問い合わせ- */
+    .inquiry {
+        display: grid;
+        /* LINEとメールのお問い合わせボタンをGridで配置する */
+
+        grid-template-columns: 1fr 1fr;
+        /* お問い合わせボタンを左右2列に均等配置する */
+
+        gap: 30px;
+        /* ボタン同士の間隔を30px確保し、隣接しすぎないようにする */
+
+        width: 90%;
+        /* メインコンテンツより少し内側に収め、左右に余白を作る */
+
+        margin: 0 auto;
+        /* お問い合わせエリア全体を中央配置する */
+
+        padding-bottom: 100px;
+    }
+
+    /* -お問い合わせタイトル- */
+    .inquiry h2 {
+        grid-column: 1 / -1;
+        /* タイトルを2列すべてにまたがって表示し、ボタンの上に配置する */
+    }
+
+    /* -お問い合わせボタン- */
+    .inquiryicon {
+        width: 90%;
+        /* Gridの列幅いっぱいにボタンを広げ、左右のボタンサイズを揃える */
+
+        height: 60px;
+        /* PCではボタンを上下に広げる */
+
+        margin: 10px auto 0;
+        /* ボタン上部の余白を少し調整 */
+
+        font-size: 1.6rem;
+    }
+
+    /* -お問い合わせアイコン- */
+    .inquiryicon img {
+        width: 40px;
+        /* アイコンを少し大きくする */
+
+        height: 40px;
+        /* アイコンを少し大きくする */
+    }
+
+    /* -News- */
+    .news {
+        width: 90%;
+        /* Newsをメインコンテンツより少し内側に配置して、左右に余白を作る */
+
+        margin: 0 auto;
+        /* News全体を中央配置する */
+
+        padding-bottom: 70px;
+        /* Newsとフッターの間に十分な余白を設け、コンテンツが詰まって見えないようにする */
+    }
+
+    /* ニュースリンクの文字サイズ */
+    .news a {
+        font-size: 1.8rem;
+    }
+
+    /* 時間の文字サイズ */
+    .news time {
+        font-size: 1.6rem;
+    }
+
+    /* -フッター- */
+    footer {
+        max-width: none;
+        /* スマートフォン用の390px制限を解除し、PCでは画面幅いっぱいに表示する */
+
+        padding: 35px 40px 25px;
+        /* PCでは上下左右の余白を広げ、フッターの情報をゆったり配置する */
+    }
+
+
+    /* -PCフッター内部- */
+    /* PC版ではフッターを左右2グループに分ける */
+    .footerInner {
+        display: grid;
+        /* フッター内部をGridで左右2つのエリアに分ける */
+
+        grid-template-columns: 1fr 2fr;
+        /* 左側を1、右側を2の割合で設定する */
+
+        align-items: start;
+        /* 左右の内容を上端に揃える */
+
+        width: 100%;
+        /* フッター内部を横幅いっぱいにする */
+    }
+
+
+    /* -フッターロゴ- */
+    /* PC版ではロゴを左側に大きく表示する */
+    .footerLogo {
+        display: block;
+        /* ロゴ全体をブロック要素として扱う */
+
+        margin: 15px 0 0;
+        /* フッター上部から少し余白を取り、ロゴを配置する */
+
+        color: #fff;
+        /* ロゴの文字色を白にする */
+    }
+
+    /* -フッターロゴ文字- */
+    /* PC版のTripNoteロゴを大きく表示する */
+    .footerLogo p {
+        font-size: 4.8rem;
+        /* ロゴ文字を48pxに設定する */
+
+        font-weight: 900;
+        /* ロゴを太字にして存在感を出す */
+
+        line-height: 1;
+        /* ロゴの上下の余白を抑える */
+    }
+
+    /* -右側エリア- */
+    /* ナビゲーションとSNSを右側にまとめる */
+    .footerRight {
+        display: flex;
+        /* ナビゲーションと下部エリアを縦方向に配置する */
+
+        flex-direction: column;
+        /* 子要素を上から下へ並べる */
+
+        align-items: flex-end;
+        /* 右側のコンテンツを右端に揃える */
+    }
+
+    /* -フッターナビ- */
+    /* PC版ではナビゲーションを横一列にする */
+    .footerNav {
+        display: flex;
+        /* ナビゲーションをFlexboxで配置する */
+
+        justify-content: flex-end;
+        /* ナビゲーションを右側へ寄せる */
+
+        margin-bottom: 30px;
+        /* ナビゲーションとSNSの間に余白を作る */
+    }
+
+    /* -ナビゲーションリスト- */
+    /* ナビゲーション項目を横並びにする */
+    .footerNav ul {
+        display: flex;
+        /* リスト項目を横方向に並べる */
+
+        align-items: center;
+        /* ナビゲーション項目を上下中央に揃える */
+
+        justify-content: flex-end;
+        /* 項目全体を右側へ寄せる */
+
+        gap: 15px;
+        /* ナビゲーション項目同士の間隔を設定する */
+
+        text-align: right;
+        /* ナビゲーション文字を右寄せにする */
+    }
+
+    /* -フッターリンク- */
+    /* PC版のナビゲーションリンクを設定する */
+    .footerNav a {
+        display: block;
+        /* リンク全体をクリックできるようにする */
+
+        padding: 0;
+        /* SP版で設定した上下の余白をなくす */
+
+        color: #D5ECFF;
+        /* フッターの背景に合わせて薄い青色にする */
+
+        font-size: 1.8rem;
+        /* ナビゲーション文字を18pxに設定する */
+
+        line-height: 1.4;
+        /* ナビゲーションの行間を設定する */
+    }
+
+    /* -SNS- */
+    /* PC版のSNSアイコンを横並びにする */
+    .footerSns {
+        display: flex;
+        /* SNSアイコンをFlexboxで配置する */
+
+        align-items: center;
+        /* SNSアイコンを上下中央に揃える */
+
+        justify-content: flex-end;
+        /* SNSアイコンを右側へ寄せる */
+
+        gap: 30px;
+        /* SNSアイコン同士の間隔を設定する */
+
+        margin-bottom: 25px;
+        /* SNSアイコンの下に25pxの余白を設け、コピーライトとの間隔を確保する */
+    }
+
+    /* -SNSリンク- */
+    /* SNSアイコンのリンク部分を設定する */
+    .footerSns a {
+        display: block;
+        /* リンクをブロック要素として扱う */
+    }
+
+    /* -SNS画像- */
+    /* PC版のSNSアイコンを大きく表示する */
+    .footerSns img {
+        display: block;
+        /* 画像下部の余白を防ぐ */
+
+        width: 45px;
+        /* SNSアイコンの横幅を45pxに設定する */
+
+        height: 45px;
+        /* SNSアイコンの高さを45pxに設定する */
+
+        object-fit: contain;
+        /* アイコンの縦横比を維持して表示する */
+    }
+
+    /* -コピーライト- */
+    /* PC版のコピーライトを設定する */
+    footer small {
+        display: block;
+        /* コピーライトを独立したブロックとして扱う */
+
+        color: #D5ECFF;
+        /* フッターの背景に合わせて薄い青色にする */
+
+        font-size: 1.4rem;
+        /* コピーライトを14pxに設定する */
+
+        line-height: 1.4;
+        /* コピーライトの行間を設定する */
+    }
+
+}

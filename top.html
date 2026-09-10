@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <!-- ページの基本設定 -->
+    <meta charset="UTF-8">
+
+    <!-- スマートフォンなどの画面幅に合わせて表示する -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ページタイトル -->
+    <title>Trip Note｜Top</title>
+
+    <!-- 検索結果などに表示されるページの説明 -->
+    <meta name="description" content="TripNoteと新しい旅を始めよう">
+
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="./css/topStyle.css">
+
+</head>
+
+
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+
+        <!-- ヘッダー内の要素をまとめる -->
+        <div class="headerInner">
+
+            <!-- サイトロゴ -->
+            <h1>
+                <a class="siteIcon" href="top.html">
+                    Trip Note
+                </a>
+            </h1>
+
+            <!-- 新規登録リンク -->
+            <a class="headerLink" href="register.html">新規登録</a>
+
+            <!-- ログインリンク -->
+            <a class="headerLink" href="login.html">ログイン</a>
+
+            <!-- メニュー -->
+            <details class="menu">
+
+                <!-- メニューを開閉するボタン -->
+                <summary class="menuButton">
+                    <img src="./images/icon/topmenu.png" alt="メニューを開く">
+                </summary>
+
+                <!-- 開閉式メニューの内容 -->
+                <nav class="menuNav">
+
+                    <!-- サービス関連メニュー -->
+                    <ul>
+                        <li>
+                            <a href="function.html">サービス紹介</a>
+                        </li>
+
+                        <li>
+                            <a href="">キーワードで探す</a>
+                        </li>
+
+                        <li>
+                            <a href="tripitinerary.html">旅のしおり</a>
+                        </li>
+                    </ul>
+
+                    <!-- 会員関連メニュー -->
+                    <ul>
+                        <li>
+                            <a href="register.html">新規会員登録</a>
+                        </li>
+
+                        <li>
+                            <a href="login.html">ログイン</a>
+                        </li>
+                    </ul>
+
+                    <!-- サポート関連メニュー -->
+                    <ul>
+                        <li>
+                            <a href="">よくある質問</a>
+                        </li>
+
+                        <li>
+                            <a href="">お問い合わせ</a>
+                        </li>
+                    </ul>
+
+                    <!-- SNSリンク -->
+                    <ul class="snsList">
+
+                        <!-- SNS -->
+                        <li>
+                            <a class="snsLog" href="">
+                                <img src="./images/icon/snsIcon02.png" alt="Trip NoteのSNSへのリンク">
+                            </a>
+                        </li>
+
+                        <!-- chat -->
+                        <li>
+                            <a class="snsLog" href="">
+                                <img src="./images/icon/Chat02.png" alt="Trip Noteお問い合わせチャットへのリンク">
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </details>
+
+        </div>
+
+    </header>
+
+
+    <!-- メインコンテンツ -->
+    <main>
+
+        <!-- ファーストビュー -->
+        <section class="top1st">
+
+            <!-- サイトタイトル -->
+            <h1>Trip Note</h1>
+
+            <!-- キャッチコピー -->
+            <p class="topCatch">
+                旅の計画も、思い出も、Trip Noteで。
+            </p>
+
+            <!-- サービス利用イメージ -->
+            <figure class="topImage">
+                <img class="top1stImg" src="./images/keyPicture/spBG.png" alt="Trip Noteの利用イメージ">
+            </figure>
+
+            <!-- サービスのコンセプト説明 -->
+            <div class="topMessage">
+
+                <!-- コンセプトメッセージ -->
+                <p>
+                    旅の計画から思い出まで、ひとつに。<br>
+                    旅は帰ってからも続く…
+                </p>
+
+                <!-- サービスの特徴説明 -->
+                <p>
+                    旅行の情報収集だけで終わらない<br>
+                    計画も、記録も、思い出もTrip Noteひとつで
+                </p>
+
+            </div>
+
+            <!-- しおり作成フォーム -->
+            <form class="bookmarkForm" action="" method="post">
+
+                <!-- しおりタイトル入力欄 -->
+                <div class="titleForm">
+                    <input type="text" name="title" placeholder="しおりのタイトル">
+                </div>
+
+                <!-- しおり作成ボタン -->
+                <div class="submitForm">
+                    <button type="submit">
+                        <span>しおりを作成する</span>
+                        <img src="./images/icon/write_black.png" alt="しおり作成">
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Trip Noteでできること -->
+        <section class="function">
+
+            <!-- セクションタイトル -->
+            <h2>
+                <img class="box_ttl" src="./images/boxTitle/boxtitle_01.png" alt="Trip Noteでできること">
+            </h2>
+
+            <!-- 機能一覧 -->
+            <ul class="functionList">
+
+                <!-- 旅のしおり -->
+                <li class="function__item">
+
+                    <!-- 機能名 -->
+                    <h3>旅のしおり</h3>
+
+                    <!-- 機能アイコンと説明文 -->
+                    <div class="function__content">
+
+                        <!-- 機能アイコン -->
+                        <figure>
+                            <img src="./images/icon/bookmark.png" alt="旅のしおりのアイコン">
+                        </figure>
+
+                        <!-- 機能説明 -->
+                        <p>
+                            旅行日程や訪問スポットを登録して、
+                            オリジナルの旅のしおりを作成。
+                            旅行中もスケジュールを簡単に確認。
+                        </p>
+
+                    </div>
+
+                </li>
+
+
+                <!-- おすすめ検索 -->
+                <li class="function__item">
+
+                    <!-- 機能名 -->
+                    <h3>おすすめ検索</h3>
+
+                    <!-- 機能アイコンと説明文 -->
+                    <div class="function__content">
+
+                        <!-- 機能アイコン -->
+                        <figure>
+                            <img src="./images/icon/search.png" alt="おすすめ検索のアイコン">
+                        </figure>
+
+                        <!-- 機能説明 -->
+                        <p>
+                            編集部や自治体監修のモデルルートや、
+                            ユーザーおすすめの旅行記・スポットを検索。
+                            気になる場所は旅のしおりやお気に入りへ追加。
+                        </p>
+
+                    </div>
+
+                </li>
+
+
+                <!-- 旅行記録 -->
+                <li class="function__item">
+
+                    <!-- 機能名 -->
+                    <h3>旅行記録</h3>
+
+                    <!-- 機能アイコンと説明文 -->
+                    <div class="function__content">
+
+                        <!-- 機能アイコン -->
+                        <figure>
+                            <img src="./images/icon/travellog.png" alt="旅行記録のアイコン">
+                        </figure>
+
+                        <!-- 機能説明 -->
+                        <p>
+                            旅行中に撮影した写真やメモを記録。
+                            公開範囲も自由に設定でき、
+                            旅行仲間との共有も簡単。
+                        </p>
+
+                    </div>
+
+                </li>
+
+
+                <!-- アルバム -->
+                <li class="function__item">
+
+                    <!-- 機能名 -->
+                    <h3>アルバム</h3>
+
+                    <!-- 機能アイコンと説明文 -->
+                    <div class="function__content">
+
+                        <!-- 機能アイコン -->
+                        <figure>
+                            <img src="./images/icon/album.png" alt="アルバムのアイコン">
+                        </figure>
+
+                        <!-- 機能説明 -->
+                        <p>
+                            旅行ごとに写真やメモを整理して、
+                            アルバムとしてまとめて保存。
+                            いつでも旅の思い出を振り返れます。
+                        </p>
+
+                    </div>
+
+                </li>
+
+
+                <!-- みんなにシェア -->
+                <li class="function__item">
+
+                    <!-- 機能名 -->
+                    <h3>みんなにシェア</h3>
+
+                    <!-- 機能アイコンと説明文 -->
+                    <div class="function__content">
+
+                        <!-- 機能アイコン -->
+                        <figure>
+                            <img src="./images/icon/share.png" alt="シェアのアイコン">
+                        </figure>
+
+                        <!-- 機能説明 -->
+                        <p>
+                            旅のしおりや旅行記を、
+                            様々な方法で共有。<br>
+                            旅行前も旅行後もみんなで楽しめます。
+                        </p>
+
+                    </div>
+
+                </li>
+
+
+                <!-- お気に入り登録 -->
+                <li class="function__item">
+
+                    <!-- 機能名 -->
+                    <h3>お気に入り登録</h3>
+
+                    <!-- 機能アイコンと説明文 -->
+                    <div class="function__content">
+
+                        <!-- 機能アイコン -->
+                        <figure>
+                            <img src="./images/icon/Favorite.png" alt="お気に入り登録のアイコン">
+                        </figure>
+
+                        <!-- 機能説明 -->
+                        <p>
+                            旅行記やモデルルート、
+                            気になるスポットをお気に入りへ保存。
+                            自分だけの旅リストを作れます。
+                        </p>
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- 会員登録の流れ -->
+        <section class="registration">
+
+            <!-- セクションタイトル -->
+            <h2>
+                <img class="box_ttl" src="./images/boxTitle/boxtitle_02.png" alt="登録3STEP">
+            </h2>
+
+            <!-- 登録手順一覧 -->
+            <ol class="stepList">
+
+                <!-- STEP01 -->
+                <li>
+                    <img src="./images/icon/Step01.jpg" alt="STEP01">
+
+                    <!-- STEP01の説明 -->
+                    <p>
+                        メールアドレスを登録し、<br>
+                        アカウントを作成します。
+                    </p>
+                </li>
+
+                <!-- STEP02 -->
+                <li>
+                    <img src="./images/icon/Step02.jpg" alt="STEP02">
+
+                    <!-- STEP02の説明 -->
+                    <p>
+                        メール内のリンクをタップし、<br>
+                        登録を確認します。
+                    </p>
+                </li>
+
+                <!-- STEP03 -->
+                <li>
+                    <img src="./images/icon/Step03.jpg" alt="STEP03">
+
+                    <!-- STEP03の説明 -->
+                    <p>
+                        プロフィールを設定して、<br>
+                        利用を開始します。
+                    </p>
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- よくある質問 -->
+        <section class="QA">
+
+            <!-- セクションタイトル -->
+            <h2>
+                <img class="box_ttl" src="./images/boxTitle/boxtitle_03.png" alt="よくある質問">
+            </h2>
+
+            <!-- FAQ一覧 -->
+            <div class="qaList">
+
+                <!-- Q1 -->
+                <details open>
+
+                    <!-- 質問 -->
+                    <summary>
+                        Q1 登録しないと使えませんか？
+                    </summary>
+
+                    <!-- 回答 -->
+                    <p>
+                        旅のしおりの作成や一部モデルルートの閲覧は、
+                        登録なしでもご利用いただけます。
+                        アルバム機能やお気に入り登録など、
+                        一部機能は無料会員登録後にご利用いただけます。
+                    </p>
+
+                </details>
+
+
+                <!-- Q2 -->
+                <details>
+
+                    <!-- 質問 -->
+                    <summary>
+                        Q2 無料で使えますか？
+                    </summary>
+
+                    <!-- 回答 -->
+                    <p>
+                        基本機能は無料でご利用いただけます。
+                    </p>
+
+                </details>
+
+
+                <!-- Q3 -->
+                <details>
+
+                    <!-- 質問 -->
+                    <summary>
+                        Q3 オフラインでも使えますか？
+                    </summary>
+
+                    <!-- 回答 -->
+                    <p>
+                        保存した旅のしおりは、
+                        オフラインでも閲覧できます。
+                        電波の届きにくい場所でも、
+                        旅行のスケジュールを確認できます。
+                    </p>
+
+                </details>
+
+
+                <!-- Q4 -->
+                <details>
+
+                    <!-- 質問 -->
+                    <summary>
+                        Q4 旅のしおりは共有できますか？
+                    </summary>
+
+                    <!-- 回答 -->
+                    <p>
+                        URLやQRコードなどを利用して、
+                        旅のしおりを共有できます。
+                    </p>
+
+                </details>
+
+
+                <!-- Q5 -->
+                <details>
+
+                    <!-- 質問 -->
+                    <summary>
+                        Q5 公開範囲は選べますか？
+                    </summary>
+
+                    <!-- 回答 -->
+                    <p>
+                        旅行記録は公開範囲を設定できます。
+                    </p>
+
+                </details>
+
+
+                <!-- Q6 -->
+                <details>
+
+                    <!-- 質問 -->
+                    <summary>
+                        Q6 お気に入り登録はできますか？
+                    </summary>
+
+                    <!-- 回答 -->
+                    <p>
+                        気になる旅行記やスポットを
+                        お気に入りに保存できます。
+                    </p>
+
+                </details>
+
+            </div>
+
+        </section>
+
+
+        <!-- お問い合わせ -->
+        <section class="inquiry">
+
+            <!-- セクションタイトル -->
+            <h2>
+                <img class="box_ttl" src="./images/boxTitle/boxtitle_04.png" alt="お問い合わせ">
+            </h2>
+
+            <!-- チャット問い合わせ -->
+            <a class="inquiryicon" href="">
+                <img src="./images/icon/Chat02.png" alt="チャット">
+                <span>チャットでお問い合わせ</span>
+            </a>
+
+            <!-- メール問い合わせ -->
+            <a class="inquiryicon" href="">
+                <img src="./images/icon/mail.png" alt="メール">
+                <span>メールでお問い合わせ</span>
+            </a>
+
+        </section>
+
+
+        <!-- お知らせ -->
+        <aside class="news">
+
+            <!-- セクションタイトル -->
+            <h2>
+                <img class="box_ttl" src="./images/boxTitle/boxtitle_05.png" alt="News">
+            </h2>
+
+            <!-- お知らせ一覧 -->
+            <ul>
+
+                <!-- お知らせ01 -->
+                <li>
+                    <a href="">
+                        <time datetime="2030-07-18">2030.07.18</time>
+                        夏のおすすめモデルルートを公開しました
+                    </a>
+                </li>
+
+                <!-- お知らせ02 -->
+                <li>
+                    <a href="">
+                        <time datetime="2030-07-10">2030.07.10</time>
+                        夏休み特集を追加しました
+                    </a>
+                </li>
+
+                <!-- お知らせ03 -->
+                <li>
+                    <a href="">
+                        <time datetime="2030-06-30">2030.06.30</time>
+                        メンテナンスのお知らせ
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+    </main>
+
+
+    <!-- フッター -->
+    <footer>
+        <div class="footerInner">
+
+            <!-- フッターロゴ -->
+            <a class="footerLogo" href="top.html">
+                <p>Trip Note</p>
+            </a>
+
+            <!-- フッター右側 -->
+            <div class="footerRight">
+
+                <!-- フッターナビゲーション -->
+                <div class="footerNav">
+
+                    <!-- サービス関連リンク -->
+                    <ul>
+                        <li>
+                            <a href="function.html">サービス紹介</a>
+                        </li>
+
+                        <li>
+                            <a href="">キーワードで探す</a>
+                        </li>
+
+                        <li>
+                            <a href="tripitinerary.html">旅のしおり</a>
+                        </li>
+                    </ul>
+
+                    <!-- 会員関連リンク -->
+                    <ul>
+                        <li>
+                            <a href="register.html">新規会員登録</a>
+                        </li>
+
+                        <li>
+                            <a href="login.html">ログイン</a>
+                        </li>
+                    </ul>
+
+                    <!-- サポート関連リンク -->
+                    <ul>
+                        <li>
+                            <a href="">よくある質問</a>
+                        </li>
+
+                        <li>
+                            <a href="">お問い合わせ</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <!-- フッターSNSリンク -->
+                <ul class="footerSns">
+
+                    <!-- SNS -->
+                    <li>
+                        <a class="snsLog" href="">
+                            <img src="./images/icon/snsIcon.png" alt="Trip NoteのSNSへのリンク">
+                        </a>
+                    </li>
+
+                    <!-- chat -->
+                    <li>
+                        <a class="snsLog" href="">
+                            <img src="./images/icon/Chat.png" alt="Trip Noteお問い合わせチャットへのリンク">
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- コピーライト -->
+                <small>
+                    &copy; 2030 TravelBook Co.,Ltd.
+                </small>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ページ上部へ戻るボタン -->
+    <a class="btn_top" href="#">▲</a>
+    <!-- JavaScript -->
+    <script>
+
+        // ヘッダー内のメニュー（details要素）を取得
+        const menu = document.querySelector('.menu');
+
+
+        // 画面幅に応じてメニューの開閉状態を切り替える関数
+        function pcMenu() {
+
+            // 画面幅が768px以上の場合（タブレット・PC）
+            if (window.innerWidth >= 768) {
+
+                // メニューを常に開いた状態にする
+                // <details class="menu" open> と同じ状態になる
+                menu.setAttribute('open', '');
+
+            } else {
+
+                // 画面幅が767px以下の場合（スマートフォン）
+                // open属性を削除して、メニューを閉じた状態にする
+                menu.removeAttribute('open');
+            }
+        }
+
+
+        // ページを読み込んだときに、
+        // 現在の画面幅に合わせてメニューの状態を設定する
+        pcMenu();
+
+
+        // ブラウザのサイズを変更したときにも、
+        // 画面幅に合わせてメニューの状態を切り替える
+        window.addEventListener('resize', pcMenu);
+
+    </script>
+</body>
+
+</html>
